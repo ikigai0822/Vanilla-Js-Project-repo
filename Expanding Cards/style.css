@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Tektur', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 5%;
+    /* background-color: #f1f0e9; */
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    /* cursor: url('media/crosshair.svg')34 30 ,auto; */
+    cursor: crosshair ;
+}
+
+.color-splash {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 1px;
+    left: 1px;
+    background-color: #9c1f1f; 
+    animation: splash 2s ease forwards;
+    pointer-events: none; 
+    border-radius: 100%;
+    border: 3px solid black;
+}
+  
+  @keyframes splash {
+    to {
+      opacity: 0;
+    }
+  }
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    border: 2px solid cadetblue;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+
+.panel h3 {
+    font-size:x-large;
+    color: cadetblue;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+}
+
+.panel:first-of-type h3{
+    color: black;
+    /* font-size: 24px; */
+}
+
+.panel.active {
+    flex: 3;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+#fourth-h3{
+    color: black;
+    bottom: 150px;
+    /* justify-content: center; */
+}
+
+@media(max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
