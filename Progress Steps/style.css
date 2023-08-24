@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+:root {
+    --line-border-fill:rgb(26, 151, 151);
+    --line-border-empty:rgb(219, 224, 224);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: #f6f7fb; */
+    font-family: 'Tektur', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: right;
+}
+
+.container{
+    text-align: center;
+}
+
+.progress-container{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;   
+    position: relative; 
+    margin-bottom: 3em;
+    max-width: 100%;
+    width: 34em;
+}
+
+.progress-container::before {
+    content:'';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.3em;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress{
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.3em;
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle {
+    background-color: #ffffff;
+    color: #999;
+    border-radius: 50%;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.3em solid var(--line-border-empty);
+    transition: 0.4 ease;
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 0.6em;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0.8em 3em;
+    margin: 0.5em;
+    font-size: 1.4;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:focus{
+    outline: 0 ;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    color: black;
+    cursor: not-allowed;
+}
